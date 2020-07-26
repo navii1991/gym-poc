@@ -4,9 +4,9 @@ const app = express();
 
 // Run the app by serving the static files
 // in the dist directory
-app.use(express.static(__dirname + '/dist'));
-app.get('*', function (req, res) {
-  res.sendfile('./dist/index.html'); // load our index.html file
+app.use(express.static('./dist/gym-poc'));
+app.get('/*', function (req, res) {
+  res.sendFile('index.html', {root: 'dist/gym-poc/'}) // load our index.html file
 });
 // Start the app by listening on the default
 // Heroku port
